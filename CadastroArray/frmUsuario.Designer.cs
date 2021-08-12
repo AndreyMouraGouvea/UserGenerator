@@ -105,6 +105,7 @@ namespace CadastroArray
             // 
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.Location = new System.Drawing.Point(170, 28);
+            this.txtCodigo.MaxLength = 2;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(42, 26);
             this.txtCodigo.TabIndex = 5;
@@ -113,6 +114,7 @@ namespace CadastroArray
             // 
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.Location = new System.Drawing.Point(170, 101);
+            this.txtNome.MaxLength = 45;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(451, 26);
             this.txtNome.TabIndex = 6;
@@ -121,6 +123,7 @@ namespace CadastroArray
             // 
             this.txtNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNivel.Location = new System.Drawing.Point(170, 165);
+            this.txtNivel.MaxLength = 1;
             this.txtNivel.Name = "txtNivel";
             this.txtNivel.Size = new System.Drawing.Size(42, 26);
             this.txtNivel.TabIndex = 7;
@@ -129,6 +132,7 @@ namespace CadastroArray
             // 
             this.txtLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogin.Location = new System.Drawing.Point(170, 232);
+            this.txtLogin.MaxLength = 15;
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(161, 26);
             this.txtLogin.TabIndex = 8;
@@ -137,9 +141,11 @@ namespace CadastroArray
             // 
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.Location = new System.Drawing.Point(170, 308);
+            this.txtSenha.MaxLength = 15;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(161, 26);
             this.txtSenha.TabIndex = 9;
+            this.txtSenha.UseSystemPasswordChar = true;
             // 
             // btnAnterior
             // 
@@ -175,6 +181,7 @@ namespace CadastroArray
             this.btnNovo.TabIndex = 12;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click_1);
             // 
             // btnAlterar
             // 
@@ -198,6 +205,7 @@ namespace CadastroArray
             this.btnExcluir.TabIndex = 14;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnSalvar
             // 

@@ -77,7 +77,7 @@ namespace CadastroArray
             Mostra();
             
         }
-        private void btnNovo_Click(object sender, EventArgs e)
+        private void btnNovo_Click_1(object sender, EventArgs e)
         {
             if (frmPrincipal.cadusu<10)
             {
@@ -141,6 +141,19 @@ namespace CadastroArray
             if (atual < frmPrincipal.cadusu-1)
             {
                 atual++;
+                Mostra();
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Confirma a exclusão do cadastro?","Confirmação",
+                MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                frmPrincipal.usuarios[atual].nome = "";
+                frmPrincipal.usuarios[atual].nivel = "";
+                frmPrincipal.usuarios[atual].login = "";
+                frmPrincipal.usuarios[atual].senha = "";
                 Mostra();
             }
         }
