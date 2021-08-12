@@ -151,6 +151,7 @@ namespace CadastroArray
             this.btnAnterior.TabIndex = 10;
             this.btnAnterior.Text = "Anterior";
             this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
             // btnProximo
             // 
@@ -162,6 +163,7 @@ namespace CadastroArray
             this.btnProximo.TabIndex = 11;
             this.btnProximo.Text = "Próximo";
             this.btnProximo.UseVisualStyleBackColor = true;
+            this.btnProximo.Click += new System.EventHandler(this.btnProximo_Click);
             // 
             // btnNovo
             // 

@@ -52,6 +52,14 @@ namespace CadastroArray
             btnImprimir.Enabled = true;
             btnSair.Enabled = true;
         }
+        private void Mostra()
+        {
+            txtCodigo.Text = frmPrincipal.usuarios[atual].codigo.ToString();
+            txtNome.Text = frmPrincipal.usuarios[atual].nome;
+            txtNivel.Text = frmPrincipal.usuarios[atual].nivel;
+            txtLogin.Text = frmPrincipal.usuarios[atual].login;
+            txtSenha.Text = frmPrincipal.usuarios[atual].senha;
+        }
         public frmUsuario()
         {
             InitializeComponent();
@@ -65,6 +73,9 @@ namespace CadastroArray
         private void frmUsuario_Load(object sender, EventArgs e)
         {
             Desabilita();
+            atual = 0;
+            Mostra();
+            
         }
         private void btnNovo_Click(object sender, EventArgs e)
         {
@@ -72,6 +83,10 @@ namespace CadastroArray
             {
                 Habilita();
                 txtCodigo.Text = (frmPrincipal.cadusu + 1).ToString();
+                txtNome.Text =  "";
+                txtNivel.Clear();
+                txtLogin.Clear();
+                txtSenha.Clear();
                 tipo = true;
             }
             else
@@ -110,6 +125,24 @@ namespace CadastroArray
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Desabilita();
+        }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            if (atual > 0)
+            {
+                atual--;
+                Mostra();
+            }
+        }
+
+        private void btnProximo_Click(object sender, EventArgs e)
+        {
+            if (atual < frmPrincipal.cadusu-1)
+            {
+                atual++;
+                Mostra();
+            }
         }
     }
 }
