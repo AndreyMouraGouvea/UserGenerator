@@ -104,7 +104,7 @@ namespace CadastroArray
                 frmPrincipal.clientes[frmPrincipal.cadcli].nome = txtNome.Text;
                 frmPrincipal.clientes[frmPrincipal.cadcli].telefone = int.Parse(txtTelefone.Text);
                 frmPrincipal.clientes[frmPrincipal.cadcli].nome = txtNome.Text;
-                frmPrincipal.clientes[frmPrincipal.cadcli].cpf = int.Parse(txtTelefone.Text)
+                frmPrincipal.clientes[frmPrincipal.cadcli].cpf = int.Parse(txtTelefone.Text);
                 atual = frmPrincipal.cadcli++;
             }
             else
@@ -116,18 +116,18 @@ namespace CadastroArray
             }
         }
 
-        private void btnAlterar_Click(object sender, EventArgs e)
+        private void btnAlterar_Click_1(object sender, EventArgs e)
         {
             Habilita();
             tipo = false;
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             Desabilita();
         }
 
-        private void btnAnterior_Click(object sender, EventArgs e)
+        private void btnAnterior_Click_1(object sender, EventArgs e)
         {
             if (atual > 0)
             {
@@ -136,7 +136,7 @@ namespace CadastroArray
             }
         }
 
-        private void btnProximo_Click(object sender, EventArgs e)
+        private void btnProximo_Click_1(object sender, EventArgs e)
         {
             if (atual < frmPrincipal.cadusu - 1)
             {
@@ -144,11 +144,10 @@ namespace CadastroArray
                 Mostra();
             }
         }
-
-        private void btnExcluir_Click(object sender, EventArgs e)
+        private void btnExcluir_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show("Confirma a exclusão do cadastro?", "Confirmação",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+               MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 frmPrincipal.usuarios[atual].nome = "";
                 frmPrincipal.usuarios[atual].nivel = "";
@@ -163,6 +162,6 @@ namespace CadastroArray
             Close();
         }
 
-       
+      
     }
 }
