@@ -9,3 +9,4 @@ C:\Users\Andrey Moura\OneDrive - Etec Centro Paula Souza\TRABALHOS\DS\CadastroAr
 C:\Users\Andrey Moura\OneDrive - Etec Centro Paula Souza\TRABALHOS\DS\CadastroArray-Aula09\CadastroArray\obj\Debug\CadastroArray.csproj.CoreCompileInputs.cache
 C:\Users\Andrey Moura\OneDrive - Etec Centro Paula Souza\TRABALHOS\DS\CadastroArray-Aula09\CadastroArray\obj\Debug\CadastroArray.exe
 C:\Users\Andrey Moura\OneDrive - Etec Centro Paula Souza\TRABALHOS\DS\CadastroArray-Aula09\CadastroArray\obj\Debug\CadastroArray.pdb
+C:\Users\Andrey Moura\OneDrive - Etec Centro Paula Souza\TRABALHOS\DS\CadastroArray-Aula09\CadastroArray\obj\Debug\CadastroArray.frmCliente.resources
