@@ -53,7 +53,8 @@ namespace CadastroArray
             frmUsuario fu = new frmUsuario();
             fu.Show();
         }
-        private void clienteToolStripMenuItem(object sender, EventArgs e)
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCliente fc = new frmCliente();
             fc.Show();
