@@ -163,6 +163,12 @@ namespace CadastroArray
             pnlPesquisa.Visible = false;
         }
 
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            pnlPesquisa.Visible = true;
+            txtPesquisa.Focus();
+        }
         private void btnOk_Click(object sender, EventArgs e)
         {
             int x;
@@ -192,10 +198,23 @@ namespace CadastroArray
                 }
         }
 
-        private void btnPesquisar_Click(object sender, EventArgs e)
+        private void btnImprimir_Click(object sender, EventArgs e)
         {
-            pnlPesquisa.Visible = true;
-            txtPesquisa.Focus();
+            printPreviewDialog1.Show();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            string strDados;
+            Graphics objImpressao = e.Graphics;
+            strDados = "FICHA DE USUÁRIO" + (char)10 + (char)10;
+            strDados = strDados + "Código: " + txtCodigo.Text + (char)10 + (char)10;
+            strDados = strDados + "Nome: " + txtNome.Text + (char)10 + (char)10;
+            strDados = strDados + "Nível: " + txtNivel.Text + (char)10 + (char)10;
+            strDados = strDados + "Login: " + txtLogin.Text;
+            objImpressao.DrawString(strDados, new System.Drawing.Font("Arial", 12, FontStyle.Bold), Brushes.Black, 50, 50);
+            objImpressao.DrawLine(new System.Drawing.Pen(Brushes.Black, 1), 50, 80, 780, 80);
+
         }
     }
 }

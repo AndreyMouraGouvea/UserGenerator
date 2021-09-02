@@ -162,6 +162,58 @@ namespace CadastroArray
             Close();
         }
 
-      
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            pnlPesquisa.Visible = true;
+            txtPesquisa.Focus();
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            int x;
+            if (txtPesquisa.Text != "")
+            {
+                for (x = 0; x < 10; x++)
+                {
+                    if (frmPrincipal.usuarios[x].nome == txtPesquisa.Text)
+                    {
+                        atual = x;
+                        Mostra();
+                        break;
+                    }
+                }
+                if (x == 10)
+                {
+                    MessageBox.Show("Nome não encontrado!");
+                }
+                pnlPesquisa.Visible = false;
+                txtPesquisa.Text = "";
+            }
+
+            else
+            {
+                MessageBox.Show("Digite um nome para pesquisa!");
+                txtPesquisa.Focus();
+            }
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.Show();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            string strDados;
+            Graphics objImpressao = e.Graphics;
+            strDados = "FICHA DE CLIENTE" + (char)10 + (char)10;
+            strDados = strDados + "Código: " + txtCodigo.Text + (char)10 + (char)10;
+            strDados = strDados + "Nome: " + txtNome.Text + (char)10 + (char)10;
+            strDados = strDados + "Telefone: " + txtTelefone.Text + (char)10 + (char)10;
+            strDados = strDados + "Email: " + txtEmail.Text;
+            objImpressao.DrawString(strDados, new System.Drawing.Font("Arial", 12, FontStyle.Bold), Brushes.Black, 50, 50);
+            objImpressao.DrawLine(new System.Drawing.Pen(Brushes.Black, 1), 50, 80, 780, 80);
+        }
+
     }
 }
