@@ -157,5 +157,45 @@ namespace CadastroArray
                 Mostra();
             }
         }
+
+        private void btnCancelarPesquisa_Click(object sender, EventArgs e)
+        {
+            pnlPesquisa.Visible = false;
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            int x;
+            if (txtPesquisa.Text != "")
+            {
+                for (x = 0; x < 10; x++)
+                {
+                    if (frmPrincipal.usuarios[x].nome == txtPesquisa.Text)
+                    {
+                        atual = x;
+                        Mostra();
+                        break;
+                    }
+                }
+                if (x == 10)
+                {
+                    MessageBox.Show("Nome não encontrado!");
+                }
+                pnlPesquisa.Visible = false;
+                txtPesquisa.Text = "";
+            }
+
+                else
+                {
+                    MessageBox.Show("Digite um nome para pesquisa!");
+                    txtPesquisa.Focus();
+                }
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            pnlPesquisa.Visible = true;
+            txtPesquisa.Focus();
+        }
     }
 }
