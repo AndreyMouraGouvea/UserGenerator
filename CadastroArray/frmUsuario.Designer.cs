@@ -289,6 +289,7 @@ namespace CadastroArray
             this.pnlPesquisa.Size = new System.Drawing.Size(762, 100);
             this.pnlPesquisa.TabIndex = 20;
             this.pnlPesquisa.Visible = false;
+            this.pnlPesquisa.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPesquisa_Paint);
             // 
             // btnCancelarPesquisa
             // 

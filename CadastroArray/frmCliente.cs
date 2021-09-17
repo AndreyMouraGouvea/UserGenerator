@@ -55,6 +55,7 @@ namespace CadastroArray
             btnPesquisar.Enabled = true;
             btnImprimir.Enabled = true;
             btnSair.Enabled = true;
+            pnlPesquisa.Visible = false;
         }
         private void Mostra()
         {
@@ -83,7 +84,7 @@ namespace CadastroArray
                 txtCodigo.Text = (frmPrincipal.cadcli + 1).ToString();
                 txtNome.Text = "";
                 txtTelefone.Clear();
-                txtNome.Clear();
+                txtEmail.Clear();
                 txtCPF.Clear();
                 tipo = true;
             }
@@ -103,16 +104,16 @@ namespace CadastroArray
                 frmPrincipal.clientes[frmPrincipal.cadcli].codigo = int.Parse(txtCodigo.Text);
                 frmPrincipal.clientes[frmPrincipal.cadcli].nome = txtNome.Text;
                 frmPrincipal.clientes[frmPrincipal.cadcli].telefone = int.Parse(txtTelefone.Text);
-                frmPrincipal.clientes[frmPrincipal.cadcli].nome = txtNome.Text;
-                frmPrincipal.clientes[frmPrincipal.cadcli].cpf = int.Parse(txtTelefone.Text);
+                frmPrincipal.clientes[frmPrincipal.cadcli].email = txtEmail.Text;
+                frmPrincipal.clientes[frmPrincipal.cadcli].cpf = int.Parse(txtCPF.Text);
                 atual = frmPrincipal.cadcli++;
             }
             else
             {
                 frmPrincipal.clientes[atual].nome = txtNome.Text;
                 frmPrincipal.clientes[atual].telefone = int.Parse(txtTelefone.Text);
-                frmPrincipal.clientes[atual].nome = txtNome.Text;
-                frmPrincipal.clientes[atual].cpf = int.Parse(txtTelefone.Text);
+                frmPrincipal.clientes[atual].email = txtEmail.Text;
+                frmPrincipal.clientes[atual].cpf = int.Parse(txtCPF.Text);
             }
         }
 
@@ -149,10 +150,10 @@ namespace CadastroArray
             if (MessageBox.Show("Confirma a exclusão do cadastro?", "Confirmação",
                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                frmPrincipal.usuarios[atual].nome = "";
-                frmPrincipal.usuarios[atual].nivel = "";
-                frmPrincipal.usuarios[atual].login = "";
-                frmPrincipal.usuarios[atual].senha = "";
+                frmPrincipal.clientes[atual].nome = "";
+                frmPrincipal.clientes[atual].telefone = 0;
+                frmPrincipal.clientes[atual].email = "";
+                frmPrincipal.clientes[atual].cpf = 0;
                 Mostra();
             }
         }
@@ -160,6 +161,10 @@ namespace CadastroArray
         private void btnSair_Click_1(object sender, EventArgs e)
         {
             Close();
+        }
+        private void btnCancelarPesquisa_Click(object sender, EventArgs e)
+        {
+            pnlPesquisa.Visible = false;
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -175,7 +180,7 @@ namespace CadastroArray
             {
                 for (x = 0; x < 10; x++)
                 {
-                    if (frmPrincipal.usuarios[x].nome == txtPesquisa.Text)
+                    if (frmPrincipal.clientes[x].nome == txtPesquisa.Text)
                     {
                         atual = x;
                         Mostra();
@@ -199,7 +204,7 @@ namespace CadastroArray
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            printPreviewDialog1.Show();
+            printPreviewDialog1.ShowDialog();
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -215,5 +220,11 @@ namespace CadastroArray
             objImpressao.DrawLine(new System.Drawing.Pen(Brushes.Black, 1), 50, 80, 780, 80);
         }
 
+        private void pnlPesquisa_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        
     }
 }

@@ -51,6 +51,7 @@ namespace CadastroArray
             btnPesquisar.Enabled = true;
             btnImprimir.Enabled = true;
             btnSair.Enabled = true;
+
         }
         private void Mostra()
         {
@@ -200,7 +201,7 @@ namespace CadastroArray
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            printPreviewDialog1.Show();
+            printPreviewDialog1.ShowDialog();
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -214,6 +215,11 @@ namespace CadastroArray
             strDados = strDados + "Login: " + txtLogin.Text;
             objImpressao.DrawString(strDados, new System.Drawing.Font("Arial", 12, FontStyle.Bold), Brushes.Black, 50, 50);
             objImpressao.DrawLine(new System.Drawing.Pen(Brushes.Black, 1), 50, 80, 780, 80);
+
+        }
+
+        private void pnlPesquisa_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
